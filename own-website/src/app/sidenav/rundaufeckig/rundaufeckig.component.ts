@@ -10,7 +10,7 @@ import { Kanal } from '../rundaufeckig/Kanal';
 })
 export class RundaufEckigComponent implements OnInit {
 
-  private kanal: Kanal;
+  public kanal: Kanal;
   private a: number;
   private b: number;
   private d: number;
@@ -26,13 +26,13 @@ export class RundaufEckigComponent implements OnInit {
     Validators.maxLength(4)];
 
   kanalForm = this.formBuilder.group({
-    a: ['400', this.DEFAULT_VALIDATOR_ARRAY],
-    b: ['200', this.DEFAULT_VALIDATOR_ARRAY],
-    d: ['200', this.DEFAULT_VALIDATOR_ARRAY],
-    l: ['300', this.DEFAULT_VALIDATOR_ARRAY],
-    dicke: ['0', this.DEFAULT_VALIDATOR_ARRAY],
-    e: ['0', this.DEFAULT_VALIDATOR_ARRAY],
-    f: ['-100', this.DEFAULT_VALIDATOR_ARRAY],
+    a: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    b: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    d: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    l: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    dicke: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    e: ['', this.DEFAULT_VALIDATOR_ARRAY],
+    f: ['', this.DEFAULT_VALIDATOR_ARRAY],
   });
 
   /*
@@ -46,6 +46,7 @@ export class RundaufEckigComponent implements OnInit {
 
   public resetForm(): void {
     this.kanalForm.reset();
+    this.kanal = undefined;
   }
 
   public ngOnInit(): void {
