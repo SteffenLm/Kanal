@@ -1,0 +1,22 @@
+.item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+mat-sidenav-container {
+    min-height: 91%;
+}
+
+mat-icon {
+    padding: 4px;
+}
+
+mat-icon ~ p {
+    margin-top: 18px;
+    margin-bottom: 18px; 
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
