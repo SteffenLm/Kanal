@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;btn_print&apos; in &apos;MainScreen.MainScreen()&apos; to &apos;btn_copy&apos;&#x0D;&#x0A;- Original project: &apos;Kanalberechnung&apos;&#x0D;&#x0A;- Original element: &apos;MainScreen.MainScreen().btn_print&apos;&#x0D;&#x0A;- Renamed element: &apos;btn_print&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;btn_print&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{MainScreen.java[MainScreen~MainScreen@btn_print!4472!4505!4480!4488!QJButton;!0!false" name="btn_copy" references="true" stamp="1508587539492" version="1.0"/>
+</session>
