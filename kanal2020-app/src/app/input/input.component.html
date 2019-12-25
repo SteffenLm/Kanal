@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+    <span>Rund auf Eckig</span>
+</mat-toolbar>
+<form
+    [formGroup]="kanalForm"
+    (ngSubmit)="onSubmit()"
+>
+    <p class="text-base font-bold pt-2 px-2">Daten erfassen</p>
+    <div class="flex flex-col">
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="a"
+                placeholder="a"
+            >
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="b"
+                placeholder="b"
+            >
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="d"
+                placeholder="d"
+            >
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="l"
+                placeholder="l"
+            >
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="dicke"
+                placeholder="dicke"
+            >
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="e"
+                placeholder="e"
+            >
+            <mat-hint>{{ hintE }}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="w-full px-2">
+            <input
+                matInput
+                formControlName="f"
+                placeholder="f"
+            >
+            <mat-hint>{{ hintF }}</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="flex flex-row justify-around pb-1">
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!kanalForm.valid"
+        >
+            Berechnen
+        </button>
+        <button
+            mat-raised-button
+            color="secondary"
+            class="outline-none"
+            [disabled]="kanalForm.untouched"
+            (click)="kanalForm.reset();"
+        >
+            Zurücksetzen
+        </button>
+    </div>
+</form>
