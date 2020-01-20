@@ -69,11 +69,10 @@
             Berechnen
         </button>
         <button
-            mat-raised-button
-            color="secondary"
+            mat-button
             class="outline-none"
-            [disabled]="kanalForm.untouched"
-            (click)="kanalForm.reset();"
+            type="button"
+            (click)="kanalForm.reset()"
         >
             Zurücksetzen
         </button>

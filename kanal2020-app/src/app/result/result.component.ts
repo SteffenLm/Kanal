@@ -17,8 +17,8 @@ export class ResultComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   public ngOnInit(): void {
-    this.route.paramMap.subscribe((paramMap: any) => {
-      this.routeParams = paramMap.params;
+    this.route.queryParams.subscribe((paramMap: any) => {
+      this.routeParams = paramMap;
       this.kanal = Kanal.getNewKanal(this.routeParams);
     });
   }

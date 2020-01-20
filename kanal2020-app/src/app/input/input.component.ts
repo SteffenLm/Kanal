@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { KanalRoute } from '../models/Kanal.model';
 
 @Component({
   selector: 'app-input',
@@ -17,7 +18,6 @@ export class InputComponent implements OnInit {
 
   public hintE: number;
   public hintF: number;
-  debugger;
 
   private DEFAULT_VALIDATOR_ARRAY = [
     Validators.required,
@@ -28,15 +28,22 @@ export class InputComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
     this.setUpForm();
-
+    this.route.queryParamMap.subscribe((paramMap) => {
+      paramMap.keys.forEach(key => {
+        this.kanalForm.controls[key].setValue(paramMap.get(key));
+      });
+    });
   }
 
   public onSubmit(): void {
-    this.router.navigate(['/result', this.kanalForm.value]);
+    this.router.navigate(['/result'], {
+      queryParams: this.kanalForm.value
+    });
   }
 
   private setUpForm(): void {
