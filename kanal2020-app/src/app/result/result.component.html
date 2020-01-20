@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
     <span>Rund auf Eckig</span>
     <span class="flex-auto"></span>
-    <button mat-icon-button>
+    <button
+        mat-icon-button
+        (click)="onEditResult()"
+    >
         <mat-icon>edit</mat-icon>
     </button>
 </mat-toolbar>

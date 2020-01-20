@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { KanalRoute, Kanal } from '../models/Kanal.model';
 
 @Component({
@@ -11,14 +11,21 @@ export class ResultComponent implements OnInit {
 
   public kanal: Kanal;
   public displayedColumns: string[] = ['column1', 'column2', 'column3', 'column4'];
+  private routeParams: KanalRoute;
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   public ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: any) => {
-      const routeParams: KanalRoute = paramMap.params;
-      this.kanal = Kanal.getNewKanal(routeParams);
+      this.routeParams = paramMap.params;
+      this.kanal = Kanal.getNewKanal(this.routeParams);
+    });
+  }
+
+  public onEditResult(): void {
+    this.router.navigate(['/'], {
+      queryParams: this.routeParams
     });
   }
 }
