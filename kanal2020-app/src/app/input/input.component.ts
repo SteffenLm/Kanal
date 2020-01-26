@@ -23,7 +23,7 @@ export class InputComponent implements OnInit {
     Validators.required,
     Validators.minLength(1),
     Validators.maxLength(4),
-    Validators.min(-50),
+    Validators.min(-1000),
     Validators.max(1000)];
 
   constructor(
