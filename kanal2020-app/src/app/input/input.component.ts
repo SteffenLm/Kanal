@@ -22,7 +22,6 @@ export class InputComponent implements OnInit {
   private DEFAULT_VALIDATOR_ARRAY = [
     Validators.required,
     Validators.minLength(1),
-    Validators.maxLength(4),
     Validators.min(-1000),
     Validators.max(1000)];
 
